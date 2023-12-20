@@ -1,6 +1,6 @@
-WHY NOT A GIF HERE? TO SET THE MOOD.
+<img src="https://media.giphy.com/media/lqMdHPtckHU6n10t4Z/giphy-downsized-large.gif" width="100%">
 
-# Island name
+# Isle of dogs
 
 Some text about your lovely island
 
