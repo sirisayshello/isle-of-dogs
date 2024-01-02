@@ -36,16 +36,12 @@ function availableRooms($checkIn, $checkOut): array
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
-
-
-// select * from rooms
-// where id not in (
-// select room_id from bookings
-// where arrival_date BETWEEN '2024-01-08' AND '2024-01-09'
-// OR
-// departure_date between '2024-01-08' AND '2024-01-09'
-// OR
-// '2024-01-08' between arrival_date and departure_date
-// OR
-
-// '2024-01-09' between arrival_date and departure_date)
+function isRoomAvailable($roomId, $availableRooms): bool
+{
+    foreach ($availableRooms as $availableRoom) {
+        if ($availableRoom['id'] === intval($roomId)) {
+            return true;
+        }
+    }
+    return false;
+}
