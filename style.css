@@ -1,8 +1,13 @@
 :root {
-    --accent-color: #be0909;
+    --accent-color-light: #fceacb;
+    --accent-color-dark: #5f5c2b;
+    --accent-color-terracotta: #d57751;
+    --accent-color-yellow: #f4bb4f;
+    --shadow-color: rgba(0, 0, 0, 0.16);
     --button-color: rgb(224 224 224);
     --text-color: #7f7f7f;
     --container-color: #f0f0ec;
+    --container-color-2: #f8f7f5;
     --oswald: 'Oswald', sans-serif;
 }
 
@@ -24,32 +29,130 @@ main {
     align-items: center;
     width: 100vw;
     font-family: var(--oswald);
-    color: var(--text-color);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    font-family: var(--oswald);
+    padding: 2rem;
+}
+
+.button {
+    background-color: white;
+    border: 0.5px solid;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+h3 {
+    font-size: 0.7rem;
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    position: relative;
+}
+
+.intro img {
+    width: 100vw;
+}
+
+.intro-booking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    width: 50rem;
+    padding: 3rem;
+    gap: 1rem;
+}
+
+.border {
+    height: 3rem;
+    background-color: var(--accent-color-light);
+    border-top: 0.1rem solid #fce7bf;
+    border-bottom: 0.1rem solid #fce7bf;
+}
+
+.section-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    width: 100vw;
+    background-color: var(--container-color-2);
 }
 
 .room-container {
     display: flex;
-    justify-content: center;
-    padding: 3rem 0;
-    width: 100vw;
-    background-color: var(--container-color);
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    padding: 1rem;
 }
 
 .room-container-inner {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1200px;
     padding: 1rem;
     gap: 1rem;
 }
 
 .room-card {
+    position: relative;
     width: 300px;
-    height: 300px;
-    background-color: lightpink;
-    border-radius: 0.5rem;
+    height: 350px;
+}
+
+.room-card:hover:not(.booked) {
+    cursor: pointer;
 }
 
 .room-check input:checked + .room-card {
-    box-shadow: 0rem 0rem 0.2rem 0.2rem var(--text-color);
+    box-shadow: 0 0 0.8rem 0 var(--shadow-color);
+}
+
+.room-card > img {
+    width: 100%;
+}
+
+.room-card > h3 {
+    padding: 0.5rem;
+}
+
+.room-info {
+    width: 100%;
+    padding: 1rem;
+}
+
+.booked {
+    opacity: 30%;
+}
+
+.booking-details {
+    width: 100%;
+    padding: 1rem;
 }
