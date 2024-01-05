@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+require 'vendor/autoload.php';
+
+use benhall14\phpCalendar\Calendar as Calendar;
+
 ?>
 
 <!DOCTYPE html>
@@ -27,17 +31,21 @@ declare(strict_types=1);
         <section class="intro">
             <div class="border"></div>
             <img src="images/facade.jpg" alt="facade of hotel building">
-            <section class="intro-booking">
+            <section class="booking-container">
                 <div>
                     <h2>BOOK A ROOM</h2>
                 </div>
 
-                <form method="post" action="/rooms.php">
-                    <label for="arrivalDate">Arrival date</label>
-                    <input id="arrivalDate" type="date" min="2024-01-01" max="2024-01-31" name="arrivalDate" />
-                    <label for="departureDate">Departure date</label>
-                    <input id="departureDate" type="date" min="2024-01-01" max="2024-01-31" name="departureDate" />
-                    <button class="button" type="submit">Search for available rooms</button>
+                <form class="booking-form" method="post" action="/rooms.php">
+                    <div>
+                        <label for="arrivalDate">Arrival date</label>
+                        <input id="arrivalDate" type="date" min="2024-01-01" max="2024-01-31" name="arrivalDate" required />
+                        <label for="departureDate">Departure date</label>
+                        <input id="departureDate" type="date" min="2024-01-01" max="2024-01-31" name="departureDate" required />
+                    </div>
+                    <div class="booking-button">
+                        <button class="button" type="submit">Search for available rooms</button>
+                    </div>
                 </form>
 
             </section>
