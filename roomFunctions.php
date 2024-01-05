@@ -14,10 +14,45 @@ function getRooms(): array
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 };
 
-function availableRooms($checkIn, $checkOut): array
+function getFeatures(): array
 {
     $db = connect('hotel.db');
-    $statement = $db->prepare("select * from rooms
+
+    $statement = $db->query('SELECT * FROM features');
+
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+};
+
+function getFeaturesByIds($featureIds): array
+{
+    $db = connect('hotel.db');
+
+    $placeholder = str_repeat('?,', count($featureIds) - 1) . '?';
+
+    $statement = $db->prepare("SELECT name, price FROM features where id in ($placeholder)");
+
+    $statement->execute($featureIds);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function getRoom(int $roomId): array
+{
+    $db = connect('hotel.db');
+    $statement = $db->prepare(
+        'select * from rooms
+        where id = :roomId'
+    );
+
+    $statement->bindParam('roomId', $roomId, PDO::PARAM_INT);
+    $statement->execute();
+    return $statement->fetch(PDO::FETCH_ASSOC);
+}
+
+
+function availableRooms(string $checkIn, string $checkOut): array
+{
+    $db = connect('hotel.db');
+    $statement = $db->prepare('select * from rooms
     where id not in (
     select room_id from bookings
     where arrival_date BETWEEN :checkIn AND :checkOut
@@ -27,7 +62,7 @@ function availableRooms($checkIn, $checkOut): array
     :checkIn between arrival_date and departure_date
     OR
 
-    :checkOut between arrival_date and departure_date)");
+    :checkOut between arrival_date and departure_date)');
 
     $statement->bindParam('checkIn', $checkIn, PDO::PARAM_STR);
     $statement->bindParam('checkOut', $checkOut, PDO::PARAM_STR);
@@ -36,10 +71,10 @@ function availableRooms($checkIn, $checkOut): array
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function isRoomAvailable($roomId, $availableRooms): bool
+function isRoomAvailable(int $roomId, array $availableRooms): bool
 {
     foreach ($availableRooms as $availableRoom) {
-        if ($availableRoom['id'] === intval($roomId)) {
+        if ($availableRoom['id'] === $roomId) {
             return true;
         }
     }
