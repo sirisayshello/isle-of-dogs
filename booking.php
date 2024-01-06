@@ -6,6 +6,11 @@ require __DIR__ . '/roomFunctions.php';
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/bookingFunctions.php';
 
+if (!isset($_POST['arrivalDate'], $_POST['departureDate'], $_POST['firstName'], $_POST['lastName'], $_POST['room'], $_POST['transferCode'])) {
+    echo 'Something went wrong';
+    die();
+}
+
 // TODO: sanitize and trim the values from the user
 $arrivalDate = $_POST['arrivalDate'];
 $departureDate = $_POST['departureDate'];
@@ -13,7 +18,10 @@ $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $roomId = intval($_POST['room']);
 $transferCode = $_POST['transferCode'];
-$featureIds = $_POST['features'];
+if (isset($_POST['features'])) {
+    $featureIds = $_POST['features'];
+}
+
 
 
 
@@ -90,27 +98,30 @@ depositTransfercode($transferCode);
 </header>
 
 <body>
-    <section class="booking-container">
-        <?php
+    <section class="booking-response">
+        <div class="response-container">
 
-        // create a booking response in json
-        $bookingResponse = [
-            'island' => 'Isle of dogs',
-            'hotel' => 'Belmond Cockapoo Palace',
-            'arrival_date' => $arrivalDate,
-            'departure_date' => $departureDate,
-            'total_cost' => $totalCost,
-            'stars' => '3',
-            'features' => $features,
-            'additional_info' => [
-                'greeting' => 'Thank you for chosing Belmond Cockapoo Palace'
-            ]
-        ];
+            <?php
 
-        $bookingResponseJson = json_encode($bookingResponse);
-        echo $bookingResponseJson;
+            // create a booking response in json
+            $bookingResponse = [
+                'island' => 'Isle of dogs',
+                'hotel' => 'Belmond Cockapoo Palace',
+                'arrival_date' => $arrivalDate,
+                'departure_date' => $departureDate,
+                'total_cost' => $totalCost,
+                'stars' => '3',
+                'features' => $features,
+                'additional_info' => [
+                    'greeting' => 'Thank you for chosing Belmond Cockapoo Palace'
+                ]
+            ];
 
-        ?>
+            $bookingResponseJson = json_encode($bookingResponse);
+            echo $bookingResponseJson;
+
+            ?>
+        </div>
 
     </section>
 </body>
