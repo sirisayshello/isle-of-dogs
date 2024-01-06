@@ -35,8 +35,8 @@ $allFeatures = getFeatures();
     <header class="header">
         <div class="title">
             <h1>BELMOND COCKAPOO PALACE</h1>
-            <h2>(NOT) A BELMOND HOTEL</h2>
-            <H3>ISLE OF DOGS</H3>
+            <h3>(NOT) A BELMOND HOTEL</h3>
+            <h3>ISLE OF DOGS</h3>
         </div>
     </header>
     <main>
@@ -62,13 +62,8 @@ $allFeatures = getFeatures();
 
                             <h1>Select a room</h1>
 
-                            <!-- <div class="booking-date">
-                            <label for="arrivalDate">Arrival date</label>
-                            <input id="arrivalDate" value="<?= $checkIn ?>" type="date" min="2024-01-01" max="2024-01-31" name="arrivalDate" readonly />
-                            <label for="departureDate">Departure date</label>
-                            <input id="departureDate" value="<?= $checkOut ?>" type="date" min="2024-01-01" max="2024-01-31" name="departureDate" readonly />
-                        </div> -->
-
+                            <input id="arrivalDate" value="<?= $checkIn ?>" type="date" min="2024-01-01" max="2024-01-31" name="arrivalDate" readonly hidden />
+                            <input id="departureDate" value="<?= $checkOut ?>" type="date" min="2024-01-01" max="2024-01-31" name="departureDate" readonly hidden />
                             <?php
 
 
@@ -82,9 +77,21 @@ $allFeatures = getFeatures();
                                     <div class="room-card <?= $isAvailable ? '' : 'booked' ?>">
 
                                         <img src="<?= $room['imageUrl'] ?>" alt="a hotelroom">
-                                        <div>
+                                        <div class="room-includes">
+                                            <p>Non-smoking</p>
+                                            <p>Free Wifi</p>
+                                            <p>Humans allowed</p>
+                                        </div>
+                                        <div class="room-info">
                                             <h2><?= $room['name'] ?></h2>
                                             <p><?= $room['info'] ?></p>
+                                            <div>
+                                                <li>Breakfast included</li>
+                                                <li>Private beach access</li>
+                                            </div>
+                                        </div>
+                                        <div class="room-price">
+                                            <h2>Price per day: <?= $room['price'] ?></h2>
                                         </div>
 
                                     </div>
@@ -106,20 +113,24 @@ $allFeatures = getFeatures();
                                             <input type="checkbox" id="<?= $feature['name'] ?>" name="features[]" value="<?= $feature['id'] ?>" hidden />
                                             <div class="feature-card">
                                                 <img src="<?= $feature['imgUrl'] ?>" alt="">
-                                                <h2><?= $feature['name'] ?></h2>
+                                                <div>
+                                                    <h2><?= $feature['name'] ?></h2>
+                                                    <h2>Price: <?= $feature['price'] ?></h2>
+                                                </div>
                                             </div>
                                         </label>
                                     <?php endforeach; ?>
                                 </fieldset>
                             </div>
-                        </div>
-                    </div>
-                    <div class="booking-details">
-                        <div class="guestInfo">
-                            <input type="text" placeholder="First name" name="firstName" required />
-                            <input type="text" placeholder="Last name" name="lastName" required />
-                            <input type="text" placeholder="transfer code" name="transferCode" required />
-                            <button class="button" type="submit">Book your stay</button>
+                            <h1>Guest information</h1>
+                            <div class="booking-details">
+                                <div class="guest-info">
+                                    <input type="text" placeholder="First name" name="firstName" required />
+                                    <input type="text" placeholder="Last name" name="lastName" required />
+                                    <input type="text" placeholder="transfer code" name="transferCode" required />
+                                    <button class="button" type="submit">Book your stay</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
