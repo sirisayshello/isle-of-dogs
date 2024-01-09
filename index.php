@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use benhall14\phpCalendar\Calendar as Calendar;
-
 ?>
 
 <!DOCTYPE html>
@@ -21,12 +19,20 @@ use benhall14\phpCalendar\Calendar as Calendar;
 
 <body>
     <header class="header">
-        <div class="title">
-            <h1>BELMOND COCKAPOO PALACE</h1>
-            <h3>(NOT) A BELMOND HOTEL</h3>
-            <h3>ISLE OF DOGS</h3>
-        </div>
+        <a href="index.php">
+            <div class="title">
+                <h1>BELMOND COCKAPOO PALACE</h1>
+                <h3>(NOT) A BELMOND HOTEL</h3>
+                <h3>ISLE OF DOGS</h3>
+            </div>
+        </a>
     </header>
+    <section class="menu">
+        <div class="menu-bar">
+            <a href="viewRooms.php">ROOMS</a>
+            <a href="explore.php">EXPLORE</a>
+        </div>
+    </section>
     <main>
         <section class="intro">
             <img src="images/facade.jpg" alt="facade of hotel building">
@@ -47,13 +53,15 @@ use benhall14\phpCalendar\Calendar as Calendar;
                         <input id="departureDate" type="date" min="2024-01-01" max="2024-01-31" name="departureDate" required />
                     </div>
                     <div class="booking-button">
-                        <button class="button" type="submit">Search for available rooms</button>
+                        <button class="button" type="submit">Check availabilty</button>
                     </div>
                 </form>
 
             </section>
         </section>
     </main>
+
+    <script src="scripts/date.js"></script>
 </body>
 
 </html>
