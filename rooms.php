@@ -2,14 +2,11 @@
 
 declare(strict_types=1);
 
+require __DIR__ . '/autoload.php';
 require __DIR__ . '/roomFunctions.php';
 
 require 'vendor/autoload.php';
 
-use benhall14\phpCalendar\Calendar as Calendar;
-
-$calendar = new Calendar;
-$calendar->useMondayStartingDate();
 
 $checkIn = $_POST['arrivalDate'];
 $checkOut = $_POST['departureDate'];
@@ -33,11 +30,20 @@ $allFeatures = getFeatures();
 
 <body>
     <header class="header">
-        <div class="title">
-            <h1>BELMOND COCKAPOO PALACE</h1>
-            <h3>(NOT) A BELMOND HOTEL</h3>
-            <h3>ISLE OF DOGS</h3>
+        <a href="index.php">
+            <div class="title">
+                <h1>BELMOND COCKAPOO PALACE</h1>
+                <h3>(NOT) A BELMOND HOTEL</h3>
+                <h3>ISLE OF DOGS</h3>
+            </div>
+        </a>
+    </header>
+    <section class="menu">
+        <div class="menu-bar">
+            <a href="viewRooms.php">ROOMS</a>
+            <a href="explore.php">EXPLORE</a>
         </div>
+    </section>
     </header>
     <main>
         <section class="section-container">
@@ -73,7 +79,7 @@ $allFeatures = getFeatures();
 
                             ?>
                                 <label class="room-check">
-                                    <input type="radio" name="room" value="<?= $room['id'] ?>" required hidden <?= $isAvailable ? '' : 'disabled' ?>>
+                                    <input class="room-input" type="radio" name="room" value="<?= $room['id'] ?>" required hidden <?= $isAvailable ? '' : 'disabled' ?>data-price="<?= $room['price'] ?>" data-name="<?= $room['name'] ?>">
                                     <div class="room-card <?= $isAvailable ? '' : 'booked' ?>">
 
                                         <img src="<?= $room['imageUrl'] ?>" alt="a hotelroom">
@@ -110,8 +116,8 @@ $allFeatures = getFeatures();
                                     <?php foreach ($allFeatures as $feature) : ?>
 
                                         <label class="feature-check" for="<?= $feature['name'] ?>">
-                                            <input type="checkbox" id="<?= $feature['name'] ?>" name="features[]" value="<?= $feature['id'] ?>" hidden />
-                                            <div class="feature-card">
+                                            <input class="feature-input" type="checkbox" id="<?= $feature['name'] ?>" name="features[]" value="<?= $feature['id'] ?>" data-price="<?= $feature['price'] ?>" data-name="<?= $feature['name'] ?>" hidden />
+                                            <div class=" feature-card">
                                                 <img src="<?= $feature['imgUrl'] ?>" alt="">
                                                 <div>
                                                     <h2><?= $feature['name'] ?></h2>
@@ -121,6 +127,7 @@ $allFeatures = getFeatures();
                                         </label>
                                     <?php endforeach; ?>
                                 </fieldset>
+
                             </div>
                             <h1>Guest information</h1>
                             <div class="booking-details">
@@ -132,12 +139,38 @@ $allFeatures = getFeatures();
                                 </div>
                             </div>
                         </div>
+
+
+                        <div class="price-container">
+                            <h2>Your stay</h2>
+                            <div class="price-details">
+                                <div class="booking-details">
+                                    <h3>Arrival date</h3>
+                                    <p><?= $checkIn ?></p>
+                                </div>
+                                <div class="booking-details">
+                                    <h3>Departure date</h3>
+                                    <p><?= $checkOut ?></p>
+                                </div>
+                            </div>
+                            <div class="chosen-room">
+                                <h3>Room</h3>
+                                <p class="room-name">No room chosen</p>
+                                <div class="feature-name"></div>
+
+                            </div>
+                            <div class="total-price-container">
+                                <h2>Total Price:</h2>
+                                <h2 class="total-price">0</h2>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
             </form>
         </section>
     </main>
+    <script src="scripts/price.js"></script>
 </body>
 
 </html>
