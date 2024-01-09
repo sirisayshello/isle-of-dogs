@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+
+require 'vendor/autoload.php';
+
 use GuzzleHttp\Client;
 
 // get number of days
@@ -102,6 +105,40 @@ function depositTransfercode(string $transferCode)
         }
         return true;
     } catch (\Exception $e) {
+        echo "Error occured: " . $e;
+    }
+}
+
+//Get image from dog api
+function getRandomDog()
+{
+    $client = new Client([
+        'timeout' => 2.0,
+    ]);
+
+    try {
+
+        $response = $client->get('https://dog.ceo/api/breeds/image/random');
+        $response = $response->getBody()->getContents();
+        $response = json_decode($response, true);
+    } catch (\Exception $e) {
         echo "Error occured!" . $e;
     }
+
+    $dogImgUrl = $response['message'];
+    $dogImgJson = json_encode($dogImgUrl);
+    echo $dogImgJson;
+}
+
+function getBookingsByRoom(int $roomId): array
+{
+    $db = connect('hotel.db');
+    $statement = $db->prepare(
+        'select * from bookings
+        where room_id = :roomId'
+    );
+
+    $statement->bindParam('roomId', $roomId, PDO::PARAM_INT);
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
