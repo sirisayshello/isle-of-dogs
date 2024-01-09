@@ -1,0 +1,38 @@
+.booked {
+    background-color: grey;
+}
+
+.day {
+    border: 1px solid gainsboro;
+}
+
+.cal-th {
+    background-color: white;
+}
+
+.cal-day-box {
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+.calendar-title {
+    height: 2rem;
+    background-color: white;
+    border: 1px solid gainsboro;
+}
+
+.calendar-title th {
+    padding-bottom: 0.5rem;
+}
+
+.calendar {
+    padding: 1rem;
+    width: 25rem;
+    height: 20rem;
+    border: 1px solid;
+}
+
+.calendar th {
+    padding-bottom: 0.5rem;
+}
