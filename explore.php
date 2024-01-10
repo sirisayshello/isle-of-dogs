@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Belmond Cockapoo Palace</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="explore.css" />
+
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 
@@ -30,7 +32,10 @@
         <section class="section-container">
             <section class="amenities">
                 <section class="amenities-card">
-                    <img class="explore-img" src="/images/beach.jpg" alt="">
+                    <div class="amenities-img">
+
+                        <img class="explore-img" src="/images/beach.jpg" alt="">
+                    </div>
                     <div class="amenities-info">
                         <h1>Beach Service</h1>
                         <p>Head down to the world-famous sands of Cockapoo Beach while still enjoying our particular brand of pampering. Our exclusive service is seasonal and based on availability. All hotel guests can relax with sun loungers, umbrellas and water.
