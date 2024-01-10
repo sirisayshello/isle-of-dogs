@@ -1,13 +1,25 @@
 const inputRooms = document.querySelectorAll('.room-input');
 const inputFeatures = document.querySelectorAll('.feature-input');
+
+const inputArrivalDate = document.querySelector('#arrivalDate');
+const inputDepartureDate = document.querySelector('#departureDate');
+
 const priceContainer = document.querySelector('.total-price');
+
+const arrivalDate = new Date(inputArrivalDate.value).getTime();
+const departureDate = new Date(inputDepartureDate.value).getTime();
+const difference = departureDate - arrivalDate;
+const numberOfDays = Math.ceil(difference / (1000 * 3600 * 24)) + 1;
+
 let roomPrice = 0;
 let featurePrice = 0;
 let roomName = 'No room chosen';
 let featureName = '';
 
 const updatePrice = () => {
-    priceContainer.textContent = roomPrice + featurePrice;
+    const discount = parseFloat(priceContainer.dataset.discount);
+
+    priceContainer.textContent = Math.ceil(roomPrice * discount + featurePrice);
 };
 
 const chosenRoom = document.querySelector('.room-name');
@@ -19,7 +31,7 @@ const updateRoomName = () => {
 
 inputRooms.forEach((inputRoom) => {
     inputRoom.addEventListener('change', (e) => {
-        roomPrice = parseInt(inputRoom.dataset.price);
+        roomPrice = parseInt(inputRoom.dataset.price) * numberOfDays;
         updatePrice();
     });
 
