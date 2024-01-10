@@ -19,11 +19,12 @@ $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $roomId = intval($_POST['room']);
 $transferCode = $_POST['transferCode'];
+$featureIds = [];
+
 if (isset($_POST['features'])) {
     $featureIds = $_POST['features'];
 }
 $greeting = 'Thank you for chosing Belmond Cockapoo Palace.';
-
 
 
 
@@ -55,8 +56,9 @@ foreach ($features as $feature) {
 
 $roomInfo = getRoom($roomId);
 $numberOfDays = numberOfDays($arrivalDate, $departureDate);
+$discount = calculateDiscount($numberOfDays);
 $roomPrice = $roomInfo['price'];
-$totalCost = $numberOfDays * $roomPrice + $featuresCost;
+$totalCost = intval(ceil($numberOfDays * $roomPrice * $discount)) + $featuresCost;
 
 // Check if a transferCode is valid and unused
 $isValidPayment = validatePayment($transferCode, $totalCost);
@@ -88,29 +90,23 @@ depositTransfercode($transferCode);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Belmond Cockapoo Palace</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="booking.css" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 
+
 <body>
     <header class="header">
-        <a href="index.php">
-            <div class="title">
-                <h1>BELMOND COCKAPOO PALACE</h1>
-                <h3>(NOT) A BELMOND HOTEL</h3>
-                <h3>ISLE OF DOGS</h3>
-            </div>
-        </a>
-    </header>
-    <section class="menu">
-        <div class="menu-bar">
-            <a href="viewRooms.php">ROOMS</a>
-            <a href="explore.php">EXPLORE</a>
+        <div class="title">
+            <h1>BELMOND COCKAPOO PALACE</h1>
+            <h3>(NOT) A BELMOND HOTEL</h3>
+            <h3>ISLE OF DOGS</h3>
         </div>
-    </section>
+    </header>
     <main>
         <section class="intro">
-            <img src="images/facade.jpg" alt="facade of hotel building">
-            <div class="booking-container">
+
+            <div class="message-container">
                 <h2><?= $greeting ?></h2>
                 <p>
                     <?php
@@ -134,8 +130,7 @@ depositTransfercode($transferCode);
 
                     ?>
                 </p>
-                <img src=<?= getRandomDog() ?> alt="a random dog">
-
+                <img class="dog-img" src=<?= getRandomDog() ?> alt="a random dog">
             </div>
 
         </section>
