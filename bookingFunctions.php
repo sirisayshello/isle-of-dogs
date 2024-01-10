@@ -142,3 +142,19 @@ function getBookingsByRoom(int $roomId): array
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function calculateDiscount(int $days): float
+{
+    $maxDiscount = 0.5;
+    $discountDaysRequired = 5;
+    $minDaysRequired = 2;
+
+    if ($days < $minDaysRequired) {
+        return 1;
+    }
+    if ($days > $discountDaysRequired) {
+        return $maxDiscount;
+    }
+
+    return 1 - (($days - 1) / $discountDaysRequired) * $maxDiscount;
+}

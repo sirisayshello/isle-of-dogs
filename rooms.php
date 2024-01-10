@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/autoload.php';
 require __DIR__ . '/roomFunctions.php';
+require __DIR__ . '/bookingFunctions.php';
 
 require 'vendor/autoload.php';
 
@@ -16,6 +17,11 @@ $availableRooms = availableRooms($checkIn, $checkOut);
 
 $allFeatures = getFeatures();
 
+
+$numberOfDaysToStay = numberOfDays($checkIn, $checkOut);
+$discount = calculateDiscount($numberOfDaysToStay);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +32,7 @@ $allFeatures = getFeatures();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Belmond Cockapoo Palace</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="rooms.css" />
 </head>
 
 <body>
@@ -159,9 +166,13 @@ $allFeatures = getFeatures();
                                 <div class="feature-name"></div>
 
                             </div>
+                            <div>
+                                <h3>Room discount</h3>
+                                <p><?= (1 - $discount) * 100 ?>%</p>
+                            </div>
                             <div class="total-price-container">
                                 <h2>Total Price:</h2>
-                                <h2 class="total-price">0</h2>
+                                <h2 class="total-price" data-discount="<?= $discount ?>">0</h2>
                             </div>
                         </div>
                     </div>
