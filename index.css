@@ -1,0 +1,6 @@
+.intro {
+    background-image: url(images/facade.jpg);
+    height: calc(100vh - 160px);
+    background-position: center;
+    background-size: cover;
+}

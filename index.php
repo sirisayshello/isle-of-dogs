@@ -14,6 +14,8 @@ require 'vendor/autoload.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Belmond Cockapoo Palace</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="rooms.css" />
+    <link rel="stylesheet" href="index.css" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 
@@ -35,7 +37,6 @@ require 'vendor/autoload.php';
     </section>
     <main>
         <section class="intro">
-            <img src="images/facade.jpg" alt="facade of hotel building">
             <section class="booking-container">
                 <div>
                     <h2>BOOK A ROOM</h2>
