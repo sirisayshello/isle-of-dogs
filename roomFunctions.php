@@ -25,6 +25,10 @@ function getFeatures(): array
 
 function getFeaturesByIds($featureIds): array
 {
+    if (count($featureIds) == 0) {
+        return [];
+    }
+
     $db = connect('hotel.db');
 
     $placeholder = str_repeat('?,', count($featureIds) - 1) . '?';
