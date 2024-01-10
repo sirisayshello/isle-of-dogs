@@ -25,6 +25,7 @@ $allFeatures = getFeatures();
     <title>Belmond Cockapoo Palace</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="calendar.css" />
+    <link rel="stylesheet" href="viewRooms.css" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 
@@ -60,21 +61,21 @@ $allFeatures = getFeatures();
                     ?>
                         <div class="view-room-card">
                             <img src="<?= $room['imageUrl'] ?>" alt="a hotelroom">
-                            <div class="room-includes">
-                                <p>Non-smoking</p>
-                                <p>Free Wifi</p>
-                                <p>Humans allowed</p>
-                            </div>
                             <div class="room-info">
                                 <h2><?= $room['name'] ?></h2>
                                 <p><?= $room['info'] ?></p>
+                                <div class="room-includes">
+                                    <p>Non-smoking</p>
+                                    <p>Free Wifi</p>
+                                    <p>Humans allowed</p>
+                                </div>
                                 <div>
                                     <li>Breakfast included</li>
                                     <li>Private beach access</li>
                                 </div>
-                            </div>
-                            <div class="room-price">
-                                <h2>Price per day: <?= $room['price'] ?></h2>
+                                <div class="room-price">
+                                    <h2>Price per day: <?= $room['price'] ?></h2>
+                                </div>
                             </div>
                             <div>
                                 <?php drawCalendar($room['id']) ?>

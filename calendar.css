@@ -1,5 +1,6 @@
 .booked {
     background-color: grey;
+    opacity: 30%;
 }
 
 .day {
@@ -28,11 +29,20 @@
 
 .calendar {
     padding: 1rem;
-    width: 25rem;
-    height: 20rem;
+    width: min(25rem, 45vw);
+    height: min(20rem, 40vw);
     border: 1px solid;
 }
 
 .calendar th {
     padding-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .calendar {
+        padding: 1rem;
+        width: 100%;
+        height: min(20rem, 40vw);
+        border: 1px solid;
+    }
 }
