@@ -39,6 +39,12 @@ $discount = calculateDiscount($numberOfDaysToStay);
     <header class="header">
         <a href="index.php">
             <div class="title">
+                <div>
+                    <img src="/svg/star.svg" alt="">
+                    <img src="/svg/star.svg" alt="">
+                    <img src="/svg/star.svg" alt="">
+                    <img src="/svg/star.svg" alt="">
+                </div>
                 <h1>BELMOND COCKAPOO PALACE</h1>
                 <h3>(NOT) A BELMOND HOTEL</h3>
                 <h3>ISLE OF DOGS</h3>
@@ -59,15 +65,15 @@ $discount = calculateDiscount($numberOfDaysToStay);
                     <div class="room-container">
                         <div class="room-container-inner">
                             <div class="details-container">
-                                <div class="booking-details">
+                                <div class="guest-information">
                                     <h3>Guests</h3>
                                     <p>1 dog</p>
                                 </div>
-                                <div class="booking-details">
+                                <div class="guest-information">
                                     <h3>Arrival date</h3>
                                     <p><?= $checkIn ?></p>
                                 </div>
-                                <div class="booking-details">
+                                <div class="guest-information">
                                     <h3>Departure date</h3>
                                     <p><?= $checkOut ?></p>
                                 </div>
@@ -91,9 +97,18 @@ $discount = calculateDiscount($numberOfDaysToStay);
 
                                         <img src="<?= $room['imageUrl'] ?>" alt="a hotelroom">
                                         <div class="room-includes">
-                                            <p>Non-smoking</p>
-                                            <p>Free Wifi</p>
-                                            <p>Humans allowed</p>
+                                            <div class="icon-info">
+                                                <img class="icon" src="svg/no-smoking.svg" alt="">
+                                                <p>Non-smoking</p>
+                                            </div>
+                                            <div class="icon-info">
+                                                <img class="icon" src="svg/wifi.svg" alt="">
+                                                <p>Free wifi</p>
+                                            </div>
+                                            <div class="icon-info">
+                                                <img class="icon" src="svg/person.svg" alt="">
+                                                <p>Humans allowed</p>
+                                            </div>
                                         </div>
                                         <div class="room-info">
                                             <h2><?= $room['name'] ?></h2>
@@ -115,7 +130,7 @@ $discount = calculateDiscount($numberOfDaysToStay);
 
 
                             <h1>Enhance your stay</h1>
-                            <div class="feature-container">
+                            <div>
 
                                 <fieldset>
 
@@ -137,7 +152,7 @@ $discount = calculateDiscount($numberOfDaysToStay);
 
                             </div>
                             <h1>Guest information</h1>
-                            <div class="booking-details">
+                            <div class="guest-information">
                                 <div class="guest-info">
                                     <input type="text" placeholder="First name" name="firstName" required />
                                     <input type="text" placeholder="Last name" name="lastName" required />
@@ -151,11 +166,11 @@ $discount = calculateDiscount($numberOfDaysToStay);
                         <div class="price-container">
                             <h2>Your stay</h2>
                             <div class="price-details">
-                                <div class="booking-details">
+                                <div class="guest-information">
                                     <h3>Arrival date</h3>
                                     <p><?= $checkIn ?></p>
                                 </div>
-                                <div class="booking-details">
+                                <div class="guest-information">
                                     <h3>Departure date</h3>
                                     <p><?= $checkOut ?></p>
                                 </div>

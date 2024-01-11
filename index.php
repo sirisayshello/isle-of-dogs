@@ -14,8 +14,8 @@ require 'vendor/autoload.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Belmond Cockapoo Palace</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="rooms.css" />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="rooms.css" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 
@@ -23,6 +23,12 @@ require 'vendor/autoload.php';
     <header class="header">
         <a href="index.php">
             <div class="title">
+                <div>
+                    <img src="/svg/star.svg" alt="">
+                    <img src="/svg/star.svg" alt="">
+                    <img src="/svg/star.svg" alt="">
+                    <img src="/svg/star.svg" alt="">
+                </div>
                 <h1>BELMOND COCKAPOO PALACE</h1>
                 <h3>(NOT) A BELMOND HOTEL</h3>
                 <h3>ISLE OF DOGS</h3>
@@ -37,7 +43,7 @@ require 'vendor/autoload.php';
     </section>
     <main>
         <section class="intro">
-            <section class="booking-container">
+            <section class="intro-booking-container">
                 <div>
                     <h2>BOOK A ROOM</h2>
                 </div>

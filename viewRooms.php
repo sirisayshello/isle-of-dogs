@@ -34,6 +34,12 @@ $allFeatures = getFeatures();
     <header class="header">
         <a href="index.php">
             <div class="title">
+                <div>
+                    <img src="/svg/star.svg" alt="">
+                    <img src="/svg/star.svg" alt="">
+                    <img src="/svg/star.svg" alt="">
+                    <img src="/svg/star.svg" alt="">
+                </div>
                 <h1>BELMOND COCKAPOO PALACE</h1>
                 <h3>(NOT) A BELMOND HOTEL</h3>
                 <h3>ISLE OF DOGS</h3>
@@ -65,9 +71,18 @@ $allFeatures = getFeatures();
                                 <h2><?= $room['name'] ?></h2>
                                 <p><?= $room['info'] ?></p>
                                 <div class="room-includes">
-                                    <p>Non-smoking</p>
-                                    <p>Free Wifi</p>
-                                    <p>Humans allowed</p>
+                                    <div class="icon-info">
+                                        <img class="icon" src="svg/no-smoking.svg" alt="">
+                                        <p>Non-smoking</p>
+                                    </div>
+                                    <div class="icon-info">
+                                        <img class="icon" src="svg/wifi.svg" alt="">
+                                        <p>Free wifi</p>
+                                    </div>
+                                    <div class="icon-info">
+                                        <img class="icon" src="svg/person.svg" alt="">
+                                        <p>Humans allowed</p>
+                                    </div>
                                 </div>
                                 <div>
                                     <li>Breakfast included</li>
