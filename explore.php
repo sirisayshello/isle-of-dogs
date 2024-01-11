@@ -17,10 +17,10 @@
         <a href="index.php">
             <div class="title">
                 <div>
-                    <img src="/svg/star.svg" alt="">
-                    <img src="/svg/star.svg" alt="">
-                    <img src="/svg/star.svg" alt="">
-                    <img src="/svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
                 </div>
                 <h1>BELMOND COCKAPOO PALACE</h1>
                 <h3>(NOT) A BELMOND HOTEL</h3>
@@ -40,7 +40,7 @@
                 <section class="amenities-card">
                     <div class="amenities-img">
 
-                        <img class="explore-img" src="/images/beach.jpg" alt="">
+                        <img class="explore-img" src="images/beach.jpg" alt="beach with sun loungers and straw parasols">
                     </div>
                     <div class="amenities-info">
                         <h1>Beach Service</h1>
@@ -63,10 +63,10 @@
                             Open daily, 7am-7pm
                         </p>
                     </div>
-                    <img class="explore-img" src="/images/pool.jpg" alt="">
+                    <img class="explore-img" src="images/pool.jpg" alt="pool with green leafs in foreground">
                 </section>
                 <section class="amenities-card">
-                    <img class="explore-img" src="/images/tennis.jpg" alt="tennis racket leaning on white bench">
+                    <img class="explore-img" src="images/tennis.jpg" alt="tennis racket leaning on white bench">
                     <div class="amenities-info">
                         <h1>Tennis</h1>
                         <p>Keep fit or de-stress with a game of tennis in our courts. Speak to our concierge to arrange for free use of racquets and balls. Alternatively improve your serve or work on your backhand with the help of a professional coach.</p>

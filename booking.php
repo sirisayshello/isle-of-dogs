@@ -100,10 +100,10 @@ depositTransfercode($transferCode);
         <a href="index.php">
             <div class="title">
                 <div>
-                    <img src="/svg/star.svg" alt="">
-                    <img src="/svg/star.svg" alt="">
-                    <img src="/svg/star.svg" alt="">
-                    <img src="/svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
                 </div>
                 <h1>BELMOND COCKAPOO PALACE</h1>
                 <h3>(NOT) A BELMOND HOTEL</h3>

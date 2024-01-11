@@ -21,11 +21,11 @@ function drawCalendar(int $roomId)
 
     foreach ($bookings as $booking) {
         $calendar->addEvent(
-            $booking['arrival_date'],   # start date in either Y-m-d or Y-m-d H:i if you want to add a time.
-            $booking['departure_date'],   # end date in either Y-m-d or Y-m-d H:i if you want to add a time.
-            '',  # event name text
-            true,           # should the date be masked - boolean default true
-            ['booked']   # (optional) additional classes in either string or array format to be included on the event days
+            $booking['arrival_date'],
+            $booking['departure_date'],
+            '',
+            true,
+            ['booked']
         );
     }
 

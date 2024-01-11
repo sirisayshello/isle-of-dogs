@@ -64,6 +64,7 @@ main {
     font-size: 1rem;
     font-family: var(--montserrat);
     cursor: pointer;
+    width: 100%;
 }
 
 .button:hover {

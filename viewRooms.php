@@ -11,7 +11,6 @@ require 'vendor/autoload.php';
 
 
 $allRooms = getRooms();
-// $availableRooms = availableRooms($checkIn, $checkOut);
 $allFeatures = getFeatures();
 
 ?>
@@ -35,10 +34,10 @@ $allFeatures = getFeatures();
         <a href="index.php">
             <div class="title">
                 <div>
-                    <img src="/svg/star.svg" alt="">
-                    <img src="/svg/star.svg" alt="">
-                    <img src="/svg/star.svg" alt="">
-                    <img src="/svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
                 </div>
                 <h1>BELMOND COCKAPOO PALACE</h1>
                 <h3>(NOT) A BELMOND HOTEL</h3>
@@ -89,7 +88,7 @@ $allFeatures = getFeatures();
                                     <li>Private beach access</li>
                                 </div>
                                 <div class="room-price">
-                                    <h2>Price per day: <?= $room['price'] ?></h2>
+                                    <h2>Price per day: $<?= $room['price'] ?></h2>
                                 </div>
                             </div>
                             <div>

@@ -24,10 +24,10 @@ require 'vendor/autoload.php';
         <a href="index.php">
             <div class="title">
                 <div>
-                    <img src="/svg/star.svg" alt="">
-                    <img src="/svg/star.svg" alt="">
-                    <img src="/svg/star.svg" alt="">
-                    <img src="/svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
                 </div>
                 <h1>BELMOND COCKAPOO PALACE</h1>
                 <h3>(NOT) A BELMOND HOTEL</h3>
@@ -48,7 +48,7 @@ require 'vendor/autoload.php';
                     <h2>BOOK A ROOM</h2>
                 </div>
 
-                <form class="booking-form" method="post" action="/rooms.php">
+                <form class="booking-form" method="post" action="rooms.php">
                     <div class="booking-details">
                         <label for="arrivalDate">
                             <h3>Arrival date</h3>
@@ -59,6 +59,8 @@ require 'vendor/autoload.php';
                         </label>
                         <input id="departureDate" type="date" min="2024-01-01" max="2024-01-31" name="departureDate" required />
                     </div>
+                    <p class="savings">Stay a little longer, save a lot more!</p>
+                    <p class="savings">Enjoy <b>10%</b> off your 2nd night and up to <b>50%</b> off for stays of six nights or more.</p>
                     <div class="booking-button">
                         <button class="button" type="submit">Check availabilty</button>
                     </div>

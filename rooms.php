@@ -33,6 +33,8 @@ $discount = calculateDiscount($numberOfDaysToStay);
     <title>Belmond Cockapoo Palace</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="rooms.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
 </head>
 
 <body>
@@ -40,10 +42,10 @@ $discount = calculateDiscount($numberOfDaysToStay);
         <a href="index.php">
             <div class="title">
                 <div>
-                    <img src="/svg/star.svg" alt="">
-                    <img src="/svg/star.svg" alt="">
-                    <img src="/svg/star.svg" alt="">
-                    <img src="/svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
+                    <img src="svg/star.svg" alt="">
                 </div>
                 <h1>BELMOND COCKAPOO PALACE</h1>
                 <h3>(NOT) A BELMOND HOTEL</h3>
@@ -60,7 +62,7 @@ $discount = calculateDiscount($numberOfDaysToStay);
     </header>
     <main>
         <section class="section-container">
-            <form method="post" action="/booking.php">
+            <form method="post" action="booking.php">
                 <div>
                     <div class="room-container">
                         <div class="room-container-inner">
@@ -119,7 +121,7 @@ $discount = calculateDiscount($numberOfDaysToStay);
                                             </div>
                                         </div>
                                         <div class="room-price">
-                                            <h2>Price per day: <?= $room['price'] ?></h2>
+                                            <h2>Price per day: $<?= $room['price'] ?></h2>
                                         </div>
 
                                     </div>
@@ -143,7 +145,7 @@ $discount = calculateDiscount($numberOfDaysToStay);
                                                 <img src="<?= $feature['imgUrl'] ?>" alt="">
                                                 <div>
                                                     <h2><?= $feature['name'] ?></h2>
-                                                    <h2>Price: <?= $feature['price'] ?></h2>
+                                                    <h2>Price: $<?= $feature['price'] ?></h2>
                                                 </div>
                                             </div>
                                         </label>
