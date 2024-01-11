@@ -10,6 +10,35 @@ Dive in the pool, chew on a sun lounger, or do some dog-watching in the hotel ba
 
 ("Bring human" is a feature offered for an additional fee)
 
+# Database structure
+
+ROOMS
+id
+name
+price
+imageUrl
+info
+
+FEATURES
+id
+name
+price
+imgUrl
+
+BOOKINGS
+id
+arrival_date
+departure_date
+first_name
+last_name
+room_id
+total_cost
+transfer_code
+
+BOOKINGS_FEATURES
+feature_id
+booking_id
+
 # Instructions
 
 If your project requires some installation or similar, please inform your user 'bout it. For instance, if you want a more decent indentation of your .php files, you could edit [.editorconfig]('/.editorconfig').
