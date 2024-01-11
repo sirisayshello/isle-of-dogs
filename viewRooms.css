@@ -38,6 +38,13 @@
     padding: 1rem;
 }
 
+.view-room-container-inner {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+}
+
 .view-room-card {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -58,6 +65,15 @@
     display: flex;
     grid-column: 2;
     grid-row: 2;
+}
+
+.icon-info {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.icon {
+    width: 1rem;
 }
 
 @media only screen and (max-width: 1024px) {

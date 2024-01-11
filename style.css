@@ -8,7 +8,24 @@
     --text-color: #7f7f7f;
     --container-color: #f0f0ec;
     --container-color-2: #f8f7f5;
-    --oswald: 'Oswald', sans-serif;
+    --montserrat: 'Montserrat', sans-serif;
+}
+
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('/fonts/Montserrat-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('fonts/Montserrat-Bold.woff2') format('woff2');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('fonts/Montserrat-Thin.woff2') format('woff2');
+    font-weight: lighter;
 }
 
 * {
@@ -16,25 +33,19 @@
     margin: 0;
 }
 
-/* @font-face {
-    font-family: 'Oswald';
-    src: local('Oswald'), url('/fonts/Oswald-Medium.woff2') format('woff2'),
-        url('/fonts/Oswald-Medium.woff') format('woff');
-} */
-
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    font-family: var(--oswald);
+    font-family: var(--montserrat);
 }
 
 .header {
     display: flex;
     justify-content: center;
-    font-family: var(--oswald);
+    font-family: var(--montserrat);
     padding: 2rem;
 }
 
@@ -51,7 +62,7 @@ main {
     text-decoration: none;
     display: inline-block;
     font-size: 1rem;
-    font-family: var(--oswald);
+    font-family: var(--montserrat);
     cursor: pointer;
 }
 
@@ -67,6 +78,7 @@ main {
 
 h1 {
     font-size: 1.5rem;
+    font-weight: bold;
 }
 
 h2 {
@@ -85,11 +97,6 @@ li {
     margin-top: 0.2rem;
 }
 
-/* .booking-response {
-    display: flex;
-    justify-content: center;
-} */
-
 .menu-bar {
     display: flex;
     justify-content: center;
@@ -103,7 +110,7 @@ li {
 }
 
 a {
-    font-family: var(--oswald);
+    font-family: var(--montserrat);
     font-size: 1rem;
     font-weight: lighter;
     color: black;

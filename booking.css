@@ -1,12 +1,13 @@
 .intro {
     background-image: url(images/beach2.jpg);
-    height: calc(100vh - 121px);
+    min-height: calc(100vh - 121px);
     background-position: center;
     background-size: cover;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 
 main {
@@ -15,7 +16,7 @@ main {
     justify-content: center;
     align-items: center;
     width: 100vw;
-    font-family: var(--oswald);
+    font-family: var(--montserrat);
 }
 
 .message-container {
@@ -23,7 +24,6 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: absolute;
     background-color: white;
     padding: 3rem;
     gap: 1rem;

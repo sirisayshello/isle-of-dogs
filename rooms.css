@@ -1,51 +1,3 @@
-.intro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    position: relative;
-}
-
-.intro img {
-    width: 100vw;
-}
-
-.booking-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    background-color: white;
-    width: 20rem;
-    padding: 3rem;
-    gap: 1rem;
-    box-shadow: 0 0 0.8rem 0 var(--shadow-color);
-    width: min(400px, 90vw);
-}
-
-.booking-container img {
-    width: 10rem;
-}
-
-.booking-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.booking-button {
-    display: flex;
-    justify-content: center;
-}
-
-/* .border {
-    height: 3rem;
-    background-color: var(--accent-color-light);
-    border-top: 0.1rem solid #fce7bf;
-    border-bottom: 0.1rem solid #fce7bf;
-} */
-
 .section-container {
     display: flex;
     flex-direction: column;
@@ -55,16 +7,9 @@
     width: 100vw;
 }
 
-/* .room-container {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    padding: 1rem;
-} */
-
 .room-container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 320px;
     max-width: 1200px;
     padding: 1rem;
 }
@@ -74,14 +19,7 @@
     flex-direction: column;
     padding: 1rem;
     gap: 1rem;
-    width: 800px;
-}
-
-.view-room-container-inner {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
+    width: 100%;
 }
 
 .room-container-inner h1 {
@@ -154,12 +92,6 @@ input[type='text'] {
     grid-row: 2;
 }
 
-/* .feature-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-} */
-
 fieldset {
     display: flex;
     margin: 0;
@@ -204,7 +136,7 @@ fieldset {
     gap: 1rem;
 }
 
-.booking-details {
+.guest-information {
     display: flex;
     flex-direction: column;
     border: 0.5px solid;
@@ -212,7 +144,7 @@ fieldset {
     padding: 1rem;
 }
 
-.booking-details p {
+.guest-information p {
     font-size: 0.8rem;
     font-weight: lighter;
     margin-top: 0.2rem;
@@ -226,8 +158,8 @@ fieldset {
 .price-container {
     display: flex;
     flex-direction: column;
-    width: 20rem;
-    height: 20rem;
+    width: 320px;
+    max-height: 320px;
     border: 0.5px solid;
     padding: 1rem;
     gap: 1rem;
@@ -240,7 +172,7 @@ fieldset {
     display: flex;
 }
 
-.price-details .booking-details {
+.price-details .guest-information {
     border: none;
     padding: 0;
 }
@@ -250,45 +182,32 @@ fieldset {
     gap: 1rem;
 }
 
-.view-room-container {
+.icon-info {
     display: flex;
-    max-width: 1200px;
-    padding: 1rem;
+    gap: 0.5rem;
 }
 
-.view-room-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
-    padding: 2rem;
-    border: 0.5px solid;
+.icon {
+    width: 1rem;
 }
-
-.view-room-card > img {
-    height: 20rem;
-}
-
-.view-room-card > h3 {
-    padding: 0.5rem;
-}
-
-.view-room-card .room-price {
-    display: flex;
-    grid-column: 2;
-    grid-row: 2;
-}
-
-@media only screen and (max-width: 1120px) {
-    .section-container {
-        width: 400px;
+@media only screen and (max-width: 960px) {
+    .price-details {
+        flex-direction: column;
+        gap: 1rem;
     }
-
+    .price-container {
+        width: 100%;
+    }
+    .room-container {
+        grid-template-columns: 3fr 1fr;
+    }
+}
+@media only screen and (max-width: 800px) {
     .room-container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        max-width: 400px;
+        width: 100%;
         padding: 1rem;
     }
 
@@ -297,7 +216,6 @@ fieldset {
         flex-direction: column;
         padding: 1rem;
         gap: 1rem;
-        width: 400px;
     }
 
     .price-container {
@@ -318,7 +236,9 @@ fieldset {
     }
 
     .room-card > img {
-        height: 400px;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
     }
 
     .room-card > h3 {
@@ -337,8 +257,7 @@ fieldset {
     }
 
     .price-container {
-        width: 370px;
-        height: 300px;
+        width: calc(100% - 2rem);
         margin-top: 0;
         position: relative;
         top: 0;
