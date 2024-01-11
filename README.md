@@ -1,12 +1,14 @@
-<img src="https://media.giphy.com/media/lqMdHPtckHU6n10t4Z/giphy-downsized-large.gif" width="100%">
+<img src="https://media.giphy.com/media/QgKsU1OlXJc5yAn3JH/giphy.gif" width="100%">
 
 # Isle of dogs
 
-Some text about your lovely island
+Welcome to Isle of dogs, with it's endless beaches, piles of tennis balls, and cotton candy sky.
 
-# Hotel name
+# Bolmond Cockapoo Palace
 
-Why not add some info about the hotel of your dreams?
+Dive in the pool, chew on a sun lounger, or do some dog-watching in the hotel bar with a delicious mocktail. Enjoy a dinner prepared by top chefs before cuddling down in the fluffy duvet covers - perhaps with your human by your side?
+
+("Bring human" is a feature offered for an additional fee)
 
 # Instructions
 
